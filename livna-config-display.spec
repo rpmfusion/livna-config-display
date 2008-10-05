@@ -2,7 +2,7 @@
 
 Name:        livna-config-display
 Version:     0.0.20
-Release:     2%{?dist}
+Release:     3%{?dist}
 Summary:     Tools to manage graphic drivers from the Livna repository
 
 URL:         http://rpm.livna.org
@@ -66,6 +66,9 @@ rm -rf $RPM_BUILD_ROOT
 %doc TODO CHANGELOG COPYING
 
 %changelog
+* Sun Oct 05 2008 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info - 0.0.20-3
+- rebuild for rpm fusion
+
 * Sun Oct 05 2008 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info - 0.0.20-2
 - rebuild for rpm fusion
 
