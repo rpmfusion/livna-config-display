@@ -1,7 +1,7 @@
 %{!?python_sitelib: %define python_sitelib %(%{__python} -c "from distutils.sysconfig import get_python_lib; print get_python_lib()")}
 
 Name:        livna-config-display
-Version:     0.0.21
+Version:     0.0.22
 Release:     1%{?dist}
 Summary:     Tools to manage graphic drivers from the Livna repository
 
@@ -50,10 +50,10 @@ desktop-file-install --vendor livna\
 rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
+%defattr(-,root,root,-)
 %dir %{_datadir}/livna-config-display
 %dir %{python_sitelib}/livnaConfigDisplay
 
-%defattr(-,root,root,-)
 %{_bindir}/livna-config-display
 %{_sbindir}/livna-config-display
 %{_datadir}/%{name}/*
@@ -66,6 +66,9 @@ rm -rf $RPM_BUILD_ROOT
 %doc TODO CHANGELOG COPYING
 
 %changelog
+* Wed Nov 12 2008 Stewart Adam <s.adam at diffingo.com> - 0.0.22-1
+- Update to 0.0.22
+
 * Wed Oct 22 2008 Stewart Adam <s.adam at diffingo.com> - 0.0.21-1
 - Update to 0.0.21
 
