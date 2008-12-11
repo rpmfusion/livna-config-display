@@ -2,7 +2,7 @@
 
 Name:        livna-config-display
 Version:     0.0.22
-Release:     1%{?dist}
+Release:     2%{?dist}
 Summary:     Tools to manage graphic drivers from the Livna repository
 
 URL:         http://rpm.livna.org
@@ -65,6 +65,9 @@ rm -rf $RPM_BUILD_ROOT
 %doc TODO CHANGELOG COPYING
 
 %changelog
+* Thu Dec 11 2008 Stewart Adam <s.adam at diffingo.com> - 0.0.22-2
+- Rebuild for python 2.6
+
 * Thu Nov 6 2008 Stewart Adam <s.adam at diffingo.com> - 0.0.22-1
 - Update to 0.0.22
 
