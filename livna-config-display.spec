@@ -2,7 +2,7 @@
 
 Name:        livna-config-display
 Version:     0.0.22
-Release:     2%{?dist}
+Release:     3%{?dist}
 Summary:     Tools to manage graphic drivers from the Livna repository
 
 URL:         http://rpm.livna.org
@@ -65,6 +65,9 @@ rm -rf $RPM_BUILD_ROOT
 %doc TODO CHANGELOG COPYING
 
 %changelog
+* Sun Mar 29 2009 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info> - 0.0.22-3
+- rebuild for new F11 features
+
 * Thu Dec 11 2008 Stewart Adam <s.adam at diffingo.com> - 0.0.22-2
 - Rebuild for python 2.6
 
