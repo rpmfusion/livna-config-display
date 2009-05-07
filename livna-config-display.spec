@@ -1,8 +1,8 @@
 %{!?python_sitelib: %define python_sitelib %(%{__python} -c "from distutils.sysconfig import get_python_lib; print get_python_lib()")}
 
 Name:        livna-config-display
-Version:     0.0.22
-Release:     3%{?dist}
+Version:     0.0.23
+Release:     1%{?dist}
 Summary:     Tools to manage graphic drivers from the Livna repository
 
 URL:         http://rpm.livna.org
@@ -65,6 +65,9 @@ rm -rf $RPM_BUILD_ROOT
 %doc TODO CHANGELOG COPYING
 
 %changelog
+* Sun Apr 19 2009 Stewart Adam <s.adam at diffingo.com> - 0.0.23-1
+- Update to 0.0.23
+
 * Sun Mar 29 2009 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info> - 0.0.22-3
 - rebuild for new F11 features
 
