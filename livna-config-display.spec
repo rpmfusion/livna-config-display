@@ -1,18 +1,17 @@
 %{!?python_sitelib: %define python_sitelib %(%{__python} -c "from distutils.sysconfig import get_python_lib; print get_python_lib()")}
 
 Name:        livna-config-display
-Version:     0.0.23
-Release:     3%{?dist}
+Version:     0.0.24
+Release:     1%{?dist}
 Summary:     Tools to manage graphic drivers from the Livna repository
 
 URL:         http://rpm.livna.org
 License:     GPLv2+
 Group:       System Environment/Base
-Source0:     http://www.diffingo.com/downloads/livna/livna-config-display/%{name}-%{version}.tar.gz
+Source0:     http://downloads.diffingo.com/livna/livna-config-display/%{name}-%{version}.tar.gz
 
 Requires:    pygtk2, pygtk2-libglade
 Requires:    usermode
-Requires:    system-config-display
 Requires:    pyxf86config >= 0.3.16
 
 BuildRoot:         %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
@@ -65,6 +64,10 @@ rm -rf $RPM_BUILD_ROOT
 %doc TODO CHANGELOG COPYING
 
 %changelog
+* Mon Aug 30 2010 Stewart Adam <s.adam at diffingo.com> - 0.0.24-1
+- Update to 0.0.24
+- Remove dependency on system-config-display
+
 * Sat Aug 21 2010 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info> - 0.0.23-3
 - rebuilt
 
