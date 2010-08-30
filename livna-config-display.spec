@@ -1,18 +1,17 @@
 %{!?python_sitelib: %define python_sitelib %(%{__python} -c "from distutils.sysconfig import get_python_lib; print get_python_lib()")}
 
 Name:        livna-config-display
-Version:     0.0.23
+Version:     0.0.24
 Release:     1%{?dist}
 Summary:     Tools to manage graphic drivers from the Livna repository
 
 URL:         http://rpm.livna.org
 License:     GPLv2+
 Group:       System Environment/Base
-Source0:     http://www.diffingo.com/downloads/livna/livna-config-display/%{name}-%{version}.tar.gz
+Source0:     http://downloads.diffingo.com/livna/livna-config-display/%{name}-%{version}.tar.gz
 
 Requires:    pygtk2, pygtk2-libglade
 Requires:    usermode
-Requires:    system-config-display
 Requires:    pyxf86config >= 0.3.16
 
 BuildRoot:         %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
@@ -21,9 +20,9 @@ BuildRequires:     desktop-file-utils
 BuildRequires:     gettext
 
 %description
-%{name} is a graphical and command-line tool to manage the various
-display drivers offered at the Livna repository. It configures the
-GDM and KDM display managers, as well as the X server configuration.
+%{name} is a graphical and command-line tool to manage the various display
+drivers offered at the Livna repository. It configures the GDM and KDM display
+managers, as well as the X server configuration.
 
 %prep
 
@@ -65,6 +64,10 @@ rm -rf $RPM_BUILD_ROOT
 %doc TODO CHANGELOG COPYING
 
 %changelog
+* Mon Aug 30 2010 Stewart Adam <s.adam at diffingo.com> - 0.0.24-1
+- Update to 0.0.24
+- Remove dependency on system-config-display
+
 * Sun Apr 19 2009 Stewart Adam <s.adam at diffingo.com> - 0.0.23-1
 - Update to 0.0.23
 
