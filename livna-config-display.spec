@@ -2,13 +2,14 @@
 
 Name:        livna-config-display
 Version:     0.0.24
-Release:     1%{?dist}
+Release:     2%{?dist}
 Summary:     Tools to manage graphic drivers from the Livna repository
 
 URL:         http://rpm.livna.org
 License:     GPLv2+
 Group:       System Environment/Base
 Source0:     http://downloads.diffingo.com/livna/livna-config-display/%{name}-%{version}.tar.gz
+Patch0:      livna-config-display-0.0.24-catalyst.patch
 
 Requires:    pygtk2, pygtk2-libglade
 Requires:    usermode
@@ -27,9 +28,7 @@ GDM and KDM display managers, as well as the X server configuration.
 %prep
 
 %setup -q
-#pushd src/livnaConfigDisplay
-#patch0 -b .patch0
-#popd
+%patch0 -b .catalyst
 
 %build
 make %{?_smp_mflags}
@@ -64,6 +63,9 @@ rm -rf $RPM_BUILD_ROOT
 %doc TODO CHANGELOG COPYING
 
 %changelog
+* Fri Oct 28 2011 Stewart Adam <s.adam at diffingo.com>	- 0.0.24-2
+- Add patch to fix traceback on	startup	with recent Catalyst drivers
+
 * Mon Aug 30 2010 Stewart Adam <s.adam at diffingo.com> - 0.0.24-1
 - Update to 0.0.24
 - Remove dependency on system-config-display

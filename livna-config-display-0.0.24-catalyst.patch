@@ -1,0 +1,17 @@
+--- src/ConfigurationDialog.py	2008-12-25 15:55:02.000000000 -0500
++++ src/ConfigurationDialog.py	2011-10-28 18:45:26.152423471 -0400
+@@ -284,12 +284,12 @@
+             self.recommended = 'AIGLX'
+         elif self.vendor == "nvidia-legacy":
+             self.recommended = MSG_NONE
+-        elif self.vendor == "fglrx":
++        elif self.vendor in ["fglrx", "catalyst"]:
+             self.supports.append('AIGLX')
+             self.supports.append('Xgl')
+             self.recommended = 'AIGLX'
+         # No driver installed?
+-        elif self.vendor == 'False':
++        else:
+             self.ui.DriverNameLabel.set_text(MSG_NONE_FOUND)
+             self.supports = ['Unknown']
+             self.recommended = 'AIGLX'
